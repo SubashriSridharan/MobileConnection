@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import com.connection.emobile.dto.UserRequestDto;
 import com.connection.emobile.dto.UserResponseDto;
 import com.connection.emobile.entity.MobileNumber;
-import com.connection.emobile.entity.Order;
+import com.connection.emobile.entity.Track;
 import com.connection.emobile.entity.Plan;
 import com.connection.emobile.entity.User;
 import com.connection.emobile.repository.MobileNumberRepository;
-import com.connection.emobile.repository.OrderRepository;
+import com.connection.emobile.repository.TrackRepository;
 import com.connection.emobile.repository.PlanRepository;
 import com.connection.emobile.repository.UserRepository;
 import com.connection.emobile.util.Constants;
@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private PlanRepository planRepository;
 	@Autowired
-	private OrderRepository orderRepository;
+	private TrackRepository orderRepository;
 	@Autowired
 	private MobileNumberRepository mobileNumberRepository;
 
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 
 		Optional<Plan> planResponse = planRepository.findById(userRequestDto.getPlanId());
 
-		Order order = new Order();
+		Track order = new Track();
 		order.setPlanId(userRequestDto.getPlanId());
 		order.setStatus(OrderEnum.INPROGRESS.toString());
 		order.setUserId(userResponse.getUserId());

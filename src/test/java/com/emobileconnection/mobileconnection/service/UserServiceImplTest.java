@@ -6,11 +6,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.connection.emobile.entity.Order;
+import com.connection.emobile.entity.Track;
 import com.connection.emobile.entity.Plan;
 import com.connection.emobile.entity.User;
 import com.connection.emobile.repository.MobileNumberRepository;
-import com.connection.emobile.repository.OrderRepository;
+import com.connection.emobile.repository.TrackRepository;
 import com.connection.emobile.repository.PlanRepository;
 import com.connection.emobile.repository.UserRepository;
 import com.connection.emobile.service.UserServiceImpl;
@@ -25,7 +25,7 @@ public class UserServiceImplTest {
 	@Mock
 	private PlanRepository planRepository;
 	@Mock
-	private OrderRepository orderRepository;
+	private TrackRepository orderRepository;
 	@Mock
 	private MobileNumberRepository mobileNumberRepository;
 	@InjectMocks
@@ -35,7 +35,7 @@ public class UserServiceImplTest {
 
 	private Plan plan = new Plan();
 
-	private Order order = new Order();
+	private Track order = new Track();
 
 	@Before
 	public void init() {
