@@ -2,15 +2,15 @@ package com.connection.emobile.dto;
 
 public class UserResponseDto {
 
-	private int orderId;
+	private int trackId;
 	private String message;
 
-	public int getOrderId() {
-		return orderId;
+	public int getTrackId() {
+		return trackId;
 	}
 
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
+	public void setTrackId(int trackId) {
+		this.trackId = trackId;
 	}
 
 	public String getMessage() {

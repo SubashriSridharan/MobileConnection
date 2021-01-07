@@ -2,18 +2,18 @@ package com.connection.emobile.dto;
 
 public class UserRequestDto {
 
-	private int mobileNumber;
+	private long mobileNumber;
 	private String username;
 	private String address;
 	private String emailId;
 	private String panCardNumber;
 	private int planId;
 
-	public int getMobileNumber() {
+	public long getMobileNumber() {
 		return mobileNumber;
 	}
 
-	public void setMobileNumber(int mobileNumber) {
+	public void setMobileNumber(long mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 

@@ -2,7 +2,7 @@ package com.connection.emobile.exception;
 
 import java.io.Serializable;
 
-public class CommonException extends Exception implements Serializable {
+public class CommonException extends RuntimeException implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
