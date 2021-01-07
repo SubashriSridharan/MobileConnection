@@ -9,11 +9,20 @@ public class Track {
 
 	@Id
 	@GeneratedValue
-	private int orderId;
+	private int trackId;
 	private String status;
 	private int userId;
 	private int planId;
 	private int adminId;
+	private String approverComments;
+
+	public String getApproverComments() {
+		return approverComments;
+	}
+
+	public void setApproverComments(String approverComments) {
+		this.approverComments = approverComments;
+	}
 
 	public int getPlanId() {
 		return planId;
@@ -39,12 +48,12 @@ public class Track {
 		this.userId = userId;
 	}
 
-	public int getOrderId() {
-		return orderId;
+	public int getTrackId() {
+		return trackId;
 	}
 
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
+	public void setTrackId(int trackId) {
+		this.trackId = trackId;
 	}
 
 	public String getStatus() {
