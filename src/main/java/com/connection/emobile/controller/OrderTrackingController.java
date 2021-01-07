@@ -12,7 +12,7 @@ import com.connection.emobile.dto.OrderTrackingResponseDto;
 import com.connection.emobile.exception.InvalidTrackIdException;
 import com.connection.emobile.service.OrderTrackingService;
 
-import jdk.internal.org.jline.utils.Log;
+
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
@@ -33,9 +33,9 @@ public class OrderTrackingController {
 	public ResponseEntity<OrderTrackingResponseDto> getOrderTrackingDetails(@RequestParam("trackId") Integer trackId)
 			throws InvalidTrackIdException {
 
-		Log.info("inside tracking controller");
+		//Log.info("inside tracking controller");
 		OrderTrackingResponseDto orderTrackingResponseDto = orderTrackingService.getOrderTrackingDetails(trackId);
-		Log.info("getting back request");
+		//Log.info("getting back request");
 		return new ResponseEntity<>(orderTrackingResponseDto, HttpStatus.OK);
 
 	}
