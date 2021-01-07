@@ -36,7 +36,7 @@ public class OrderTrackingControllerTest {
 	@Test
 	public void getTrackDetailsSuccess() throws InvalidTrackIdException {
 		Mockito.when(orderTrackingService.getOrderTrackingDetails(Mockito.any())).thenReturn(orderTrackingResponseDto);
-		ResponseEntity<OrderTrackingResponseDto> response = orderTrackingController.getTrackDetails(trackId);
+		ResponseEntity<OrderTrackingResponseDto> response = orderTrackingController.getOrderTrackingDetails(trackId);
 		// expected actual
 		Assert.assertEquals(200, response.getStatusCodeValue());
 		Assert.assertEquals("Completed", response.getBody().getOrderStatus());
