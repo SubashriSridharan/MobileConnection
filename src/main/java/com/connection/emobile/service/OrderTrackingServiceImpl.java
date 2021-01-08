@@ -16,6 +16,14 @@ public class OrderTrackingServiceImpl implements OrderTrackingService {
 
 	@Autowired
 	OrderTrackingRepository orderTrackingRepository;
+	
+	/*
+	 * This method is used for fetching the status of the  service connection requested
+	 * 
+	 * trackId is the requested parameter to fetch the details
+	 * 
+	 * @return OrderTrackingResponseDto containing the status and Message for the placed mobile service request
+	 */
 
 	@Override
 	public OrderTrackingResponseDto getOrderTrackingDetails(Integer trackId) throws InvalidTrackIdException {
