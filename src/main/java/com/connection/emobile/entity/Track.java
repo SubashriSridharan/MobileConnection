@@ -2,9 +2,12 @@ package com.connection.emobile.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Track {
 
 	@Id
@@ -15,6 +18,15 @@ public class Track {
 	private int planId;
 	private int adminId;
 	private long mobileNumber;
+	private String approverComments;
+
+	public String getApproverComments() {
+		return approverComments;
+	}
+
+	public void setApproverComments(String approverComments) {
+		this.approverComments = approverComments;
+	}
 
 	public int getTrackId() {
 		return trackId;
@@ -71,5 +83,6 @@ public class Track {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 
 }
