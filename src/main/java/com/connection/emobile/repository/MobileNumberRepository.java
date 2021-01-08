@@ -6,7 +6,5 @@ import com.connection.emobile.entity.MobileNumber;
 
 @Repository
 public interface MobileNumberRepository extends JpaRepository<MobileNumber, Long> {
-	
-	 
 
 }

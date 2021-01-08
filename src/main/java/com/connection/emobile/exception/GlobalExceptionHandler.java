@@ -13,7 +13,7 @@ public class GlobalExceptionHandler extends RuntimeException{
 	@ExceptionHandler(CommonException.class)
 	public ResponseEntity<ResponseError> commonException(Exception e) {
 	
-		ResponseError error = new ResponseError(e.getMessage(), HttpStatus.NOT_FOUND.value());
+		ResponseError error = new ResponseError(e.getMessage(), HttpStatus.BAD_REQUEST.value());
 		return new ResponseEntity<>(error, HttpStatus.OK);
 	}
 	
