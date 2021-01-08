@@ -36,7 +36,7 @@ public class OrderTrackingServiceImplTest {
     @Before
     public void setup() {
         track.setApproverComments("Approved");
-        track.setTrackStatus("Completed");
+        track.setStatus("Completed");
     }
     
     @Test

@@ -32,7 +32,7 @@ public class OrderTrackingServiceImpl implements OrderTrackingService {
 		if (trackingDetails.isPresent()) {
 			OrderTrackingResponseDto orderTrackingResponseDto = new OrderTrackingResponseDto();
 			orderTrackingResponseDto.setAdminComments(trackingDetails.get().getApproverComments());
-			orderTrackingResponseDto.setOrderStatus(trackingDetails.get().getTrackStatus());
+			orderTrackingResponseDto.setOrderStatus(trackingDetails.get().getStatus());
 
 			return orderTrackingResponseDto;
 		} else {

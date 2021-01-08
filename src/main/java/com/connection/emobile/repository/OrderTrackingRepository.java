@@ -16,7 +16,7 @@ public interface OrderTrackingRepository extends JpaRepository<Track, Integer> {
 
 	public Optional<Track> findByTrackId(Integer trackId);
 
-	@Query("SELECT t.userId from Track t " + "WHERE  t.trackStatus = :status")
+	@Query("SELECT t.userId from Track t " + "WHERE  t.status = :status")
 	public List<Integer> getApprovedOrdersList(@Param("status") String status);
 
 }
