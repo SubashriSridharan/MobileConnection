@@ -9,11 +9,12 @@ public class Track {
 
 	@Id
 	@GeneratedValue
-	private int orderId;
-	private String status;
+	private int trackId;
+	private String trackStatus;
 	private int userId;
 	private int planId;
 	private int adminId;
+	private Long mobileNumber;
 
 	public int getPlanId() {
 		return planId;
@@ -40,19 +41,27 @@ public class Track {
 	}
 
 	public int getOrderId() {
-		return orderId;
+		return trackId;
 	}
 
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
+	public void setOrderId(int trackId) {
+		this.trackId = trackId;
 	}
 
 	public String getStatus() {
-		return status;
+		return trackStatus;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setStatus(String trackStatus) {
+		this.trackStatus = trackStatus;
+	}
+
+	public Long getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(Long mobileNumber) {
+		this.mobileNumber = mobileNumber;
 	}
 
 }

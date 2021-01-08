@@ -7,15 +7,14 @@ import javax.persistence.Id;
 public class MobileNumber {
 
 	@Id
-	private int mobileNumber;
+	private Long mobileNumber;
 	private String status;
-	private int userId;
 
-	public int getMobileNumber() {
+	public Long getMobileNumber() {
 		return mobileNumber;
 	}
 
-	public void setMobileNumber(int mobileNumber) {
+	public void setMobileNumber(Long mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 
@@ -27,11 +26,4 @@ public class MobileNumber {
 		this.status = status;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
 }
