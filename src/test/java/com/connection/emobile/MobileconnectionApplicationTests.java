@@ -1,4 +1,4 @@
-package com.emobileconnection.mobileconnection;
+package com.connection.emobile;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

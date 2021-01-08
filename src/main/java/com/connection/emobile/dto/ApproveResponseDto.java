@@ -1,5 +1,10 @@
 package com.connection.emobile.dto;
 
+import lombok.Builder;
+import lombok.Value;
+
+@Builder
+@Value
 public class ApproveResponseDto {
 private String message;
 private String statusCode;

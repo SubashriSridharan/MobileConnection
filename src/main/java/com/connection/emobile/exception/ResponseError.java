@@ -21,6 +21,10 @@ public class ResponseError implements Serializable {
 		return statusCode;
 	}
 
+	public ResponseError() {
+		super();
+	}
+
 	public void setStatusCode(int statusCode) {
 		this.statusCode = statusCode;
 	}

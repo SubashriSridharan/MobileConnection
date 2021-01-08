@@ -2,17 +2,18 @@ package com.connection.emobile.dto;
 
 public class ApproveRequestDto {
 private String status;
-private String adminComments;
+private String approverComments;
 public String getStatus() {
 	return status;
 }
 public void setStatus(String status) {
 	this.status = status;
 }
-public String getAdminComments() {
-	return adminComments;
+public String getApproverComments() {
+	return approverComments;
 }
-public void setAdminComments(String adminComments) {
-	this.adminComments = adminComments;
+public void setApproverComments(String approverComments) {
+	this.approverComments = approverComments;
 }
+
 }
