@@ -59,6 +59,7 @@ public class AdminController {
 				dto.setMobileNumber(Long.valueOf(obj[6].toString()));
 				dto.setPlanId(Integer.parseInt(obj[7].toString()));
 				dto.setPlanType(obj[8].toString());
+				dto.setPlanDescription(obj[9].toString());
 
 				connectionsList.add(dto);
 			}

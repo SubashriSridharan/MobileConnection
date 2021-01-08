@@ -12,6 +12,8 @@ public class NewConnectionResponseDTO {
 	private String trackStatus;
 	private int planId;
 	private String planType;
+	private String planDescription;
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -72,5 +74,11 @@ public class NewConnectionResponseDTO {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-
+	public String getPlanDescription() {
+		return planDescription;
+	}
+	public void setPlanDescription(String planDescription) {
+		this.planDescription = planDescription;
+	}
+	
 }
