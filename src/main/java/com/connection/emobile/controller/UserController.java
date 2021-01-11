@@ -37,6 +37,11 @@ public class UserController {
 
 	}
 
+	/*
+	 * This method is used for get the available mobile numbers from database
+	 *
+	 * @return List of mobile numbers
+	 */
 	@GetMapping(value = "/mobileNumbers")
 	public ResponseEntity<List<Long>> availableMobileNumbers() {
 		return new ResponseEntity<>(userService.availableMobileNumbers(),HttpStatus.OK);
