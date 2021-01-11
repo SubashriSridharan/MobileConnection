@@ -5,8 +5,11 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.connection.emobile.dto.UserRequestDto;
 import com.connection.emobile.dto.UserResponseDto;
@@ -26,6 +29,8 @@ import com.connection.emobile.util.OrderEnum;
 @Service
 public class UserServiceImpl implements UserService {
 
+	Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+
 	@Autowired
 	private UserRepository userRepository;
 	@Autowired
@@ -34,16 +39,19 @@ public class UserServiceImpl implements UserService {
 	private TrackRepository trackRepository;
 	@Autowired
 	private MobileNumberRepository mobileNumberRepository;
-	
+
 	/*
 	 * This method is used for requesting new mobile service connection
 	 * 
-	 * UserRequestDto object as a request body that contains user personal info and mobile plan details
+	 * UserRequestDto object as a request body that contains user personal info and
+	 * mobile plan details
 	 * 
 	 * @return TrackId and Message for the placed mobile service request
 	 */
-
+	@Transactional
 	public Optional<UserResponseDto> save(final UserRequestDto userRequestDto) {
+
+		logger.info("UserService Impl - Request for new Connection");
 
 		if (String.valueOf(userRequestDto.getMobileNumber()).length() != 10) {
 
@@ -102,9 +110,8 @@ public class UserServiceImpl implements UserService {
 		return pattern.matcher(email).matches();
 	}
 
-	public List<Long> availableMobileNumbers(){
-		return mobileNumberRepository.findAll()
-				.stream()
-				.map(MobileNumber::getMobileNumber).collect(Collectors.toList());
+	public List<Long> availableMobileNumbers() {
+		return mobileNumberRepository.findAll().stream().map(MobileNumber::getMobileNumber)
+				.collect(Collectors.toList());
 	}
 }

@@ -50,7 +50,7 @@ public class UserServiceImplTest {
     private static final int ADMIN_ID = 9999;
 
     @Mock
-    private UserRepository userRepository;
+    UserRepository userRepository;
     @Mock
     PlanRepository planRepository;
     @Mock

@@ -62,7 +62,7 @@ public class UserControllerTest {
 		ResponseEntity<UserResponseDto> userResponseDto = userController.save(userRequestDto);
 		
 		assertEquals(TRACK_ID, userResponseDto.getBody().getTrackId());
-		assertEquals(HttpStatus.OK.value(), userResponseDto.getStatusCode());
+		assertEquals(HttpStatus.OK.value(), userResponseDto.getStatusCode().value());
 	}
 
 	@Test
