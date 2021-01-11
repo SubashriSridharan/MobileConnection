@@ -1,7 +1,9 @@
 package com.emobileconnection.mobileconnection.controller;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.Before;
@@ -61,5 +63,12 @@ public class UserControllerTest {
 		
 		assertEquals(TRACK_ID, userResponseDto.getBody().getTrackId());
 		assertEquals(HttpStatus.OK.value(), userResponseDto.getStatusCode());
+	}
+
+	@Test
+	public void testAvailableMobileNumbers() {
+		ResponseEntity<List<Long>> listOfMobileNumbers = userController.availableMobileNumbers();
+		assertNotNull(listOfMobileNumbers);
+		assertEquals(200, listOfMobileNumbers.getStatusCodeValue());
 	}
 }

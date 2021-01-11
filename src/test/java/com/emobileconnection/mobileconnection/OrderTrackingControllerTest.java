@@ -16,7 +16,7 @@ import com.connection.emobile.exception.InvalidTrackIdException;
 import com.connection.emobile.service.OrderTrackingService;
 
 
-@RunWith((MockitoJUnitRunner.class))
+@RunWith(MockitoJUnitRunner.class)
 public class OrderTrackingControllerTest {
 	@Mock
 	OrderTrackingService orderTrackingService;

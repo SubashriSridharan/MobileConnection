@@ -1,7 +1,9 @@
 package com.connection.emobile.service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -98,5 +100,11 @@ public class UserServiceImpl implements UserService {
 		Pattern pattern = Pattern.compile(emailRegex);
 
 		return pattern.matcher(email).matches();
+	}
+
+	public List<Long> availableMobileNumbers(){
+		return mobileNumberRepository.findAll()
+				.stream()
+				.map(MobileNumber::getMobileNumber).collect(Collectors.toList());
 	}
 }
