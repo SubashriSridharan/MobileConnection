@@ -17,11 +17,14 @@ public class GlobalExceptionHandler extends RuntimeException{
 		ResponseError error = new ResponseError(e.getMessage(), HttpStatus.BAD_REQUEST.value());
 		return new ResponseEntity<>(error, HttpStatus.OK);
 	}
-	@ExceptionHandler(InvalidTrackIdException.class)
-	public ResponseEntity<ResponseError> invalidTrackId(InvalidTrackIdException e, WebRequest request) {
 
-		ResponseError error = new ResponseError(e.getMessage(), HttpStatus.NOT_FOUND.value());
-		return new ResponseEntity<>(error, HttpStatus.OK);
-	}
 	
+	  @ExceptionHandler(InvalidTrackIdException.class) public
+	  ResponseEntity<ResponseError> invalidTrackId(InvalidTrackIdException e,
+	  WebRequest request) {
+	  
+	  ResponseError error = new ResponseError(e.getMessage(),
+	  HttpStatus.NOT_FOUND.value()); return new ResponseEntity<>(error,
+	  HttpStatus.OK); }
+	 
 }

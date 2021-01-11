@@ -31,4 +31,8 @@ public class ResponseError implements Serializable {
 
 	}
 
+	public ResponseError() {
+		
+	}
+
 }
