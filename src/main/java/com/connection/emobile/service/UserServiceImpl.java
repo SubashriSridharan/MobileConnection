@@ -77,6 +77,7 @@ public class UserServiceImpl implements UserService {
 		track.setStatus(OrderEnum.INPROGRESS.toString());
 		track.setUserId(userResponse.getUserId());
 		track.setMobileNumber(userRequestDto.getMobileNumber());
+		track.setApproverComments(MobileNumberStatusEnum.REQUESTED.toString());
 
 		if (planResponse.get().getType().equalsIgnoreCase(Constants.POSTPAID))
 			track.setAdminId(1);
