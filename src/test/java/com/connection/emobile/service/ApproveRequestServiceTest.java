@@ -55,7 +55,7 @@ public class ApproveRequestServiceTest {
 
 	public void approveRequestByAdminTest() throws InvalidTrackIdException {
 
-		Mockito.when(trackRepository.findById(1)).thenReturn(Optional.of(track));
+		Mockito.when(trackRepository.findByTrackId(1)).thenReturn(Optional.of(track));
 
 		ApproveResponseDto result = approveRequestService.approveRequestByAdmin(approveRequestDto, 1);
 		assertNotNull(result);

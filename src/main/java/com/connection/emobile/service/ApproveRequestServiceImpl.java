@@ -24,7 +24,7 @@ public class ApproveRequestServiceImpl implements ApproveRequestService {
 	public ApproveResponseDto approveRequestByAdmin(ApproveRequestDto approveRequestDto, Integer trackId)
 			throws InvalidTrackIdException {
 		ApproveResponseDto approveResponseDto = new ApproveResponseDto();
-		Optional<Track> trackRecord = trackRepository.findById(trackId);
+		Optional<Track> trackRecord = trackRepository.findByTrackId(trackId);
 		if (trackRecord.isPresent()) {
 			Track track = trackRecord.get();
 			track.setStatus(approveRequestDto.getStatus());

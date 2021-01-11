@@ -40,10 +40,8 @@ public class ApproveOrRejectConnectionControllerTest {
 		approveResponseDto.setMessage("success");
 		approveResponseDto.setStatusCode("200");
 		
-
-	}
-
-	@Test
+}
+   @Test
 	public void approvalRequestTest() throws InvalidTrackIdException {
 		// GIVEN
 

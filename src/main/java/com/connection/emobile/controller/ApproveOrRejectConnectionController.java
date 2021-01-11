@@ -15,6 +15,9 @@ import com.connection.emobile.dto.ApproveResponseDto;
 import com.connection.emobile.exception.InvalidTrackIdException;
 import com.connection.emobile.service.ApproveRequestService;
 
+import jdk.internal.org.jline.utils.Log;
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("/request")
 public class ApproveOrRejectConnectionController {
@@ -33,6 +36,7 @@ public class ApproveOrRejectConnectionController {
 	@PutMapping("/{trackId}")
 	public ResponseEntity<ApproveResponseDto> approvalRequest(@RequestBody ApproveRequestDto approveRequestDto,
 			@RequestParam Integer trackId) throws InvalidTrackIdException {
+	
 		return new ResponseEntity<>(approveRequestService.approveRequestByAdmin(approveRequestDto, trackId),
 				HttpStatus.OK);
 	}
