@@ -1,7 +1,6 @@
-package com.emobileconnection.mobileconnection.controller;
+package com.emobileconnection.mobileconnection.service;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,24 +11,20 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import com.connection.emobile.controller.AdminController;
-import com.connection.emobile.dto.NewConnectionResponseDTO;
-import com.connection.emobile.service.AdminService;
+import com.connection.emobile.repository.AdminRepository;
+import com.connection.emobile.service.AdminServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
-public class AdminControllerTest {
-
+public class AdminServiceImplTest {
+	
 	@Mock
-	AdminService adminService;
+	AdminRepository adminRepository;
 
 	@InjectMocks
-	AdminController adminController;
+	AdminServiceImpl adminService;
 
 	private int adminId = 1;
 	private List<Object> newConnectionsList;
-	private List<Object> noNewConnectionsList;;
 
 	@Before
 	public void setUp() {
@@ -61,32 +56,15 @@ public class AdminControllerTest {
 		newConnectionsList.add(first_request);
 		newConnectionsList.add(second_request);
 		
-		noNewConnectionsList = new ArrayList<Object>();
-	}
-
-	@Test
-	public void testGetNewConnectionRequests() {
-
-		Mockito.when(adminService.getNewConnectionRequests(Mockito.anyInt())).thenReturn(newConnectionsList);
-
-		ResponseEntity<List<NewConnectionResponseDTO>> responseDTO = adminController.viewConnectionRequests(adminId);
-
-		assertEquals(HttpStatus.OK, responseDTO.getStatusCode());
-		assertEquals(2, responseDTO.getBody().size());
-		assertEquals("shreya.nair@gmail.com", responseDTO.getBody().get(0).getEmailId());
-
 	}
 	
 	@Test
-	public void testNoNewConnectionRequests() {
-
-		Mockito.when(adminService.getNewConnectionRequests(Mockito.anyInt())).thenReturn(noNewConnectionsList);
-
-		ResponseEntity<List<NewConnectionResponseDTO>> responseDTO = adminController.viewConnectionRequests(adminId);
-
-		assertEquals(HttpStatus.NO_CONTENT, responseDTO.getStatusCode());
-		assertNull(responseDTO.getBody());
+	public void testGetNewConnectionRequests() {
+		Mockito.when(adminRepository.getNewConnections(Mockito.anyInt(), Mockito.anyString())).thenReturn(newConnectionsList);
+		List<Object> responseDTO = adminService.getNewConnectionRequests(adminId);
+		assertEquals(2, responseDTO.size());
 
 	}
+	
 
 }

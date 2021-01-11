@@ -18,7 +18,5 @@ public class AdminServiceImpl implements AdminService{
 		return newConnectionRequests;
 		
 	}
-	
-	
 
 }
